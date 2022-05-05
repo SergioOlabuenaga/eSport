@@ -1,142 +1,107 @@
-drop table login CASCADE CONSTRAINTS;
-drop table administrador CASCADE CONSTRAINTS;
-drop table usuario CASCADE CONSTRAINTS;
-drop table jugador CASCADE CONSTRAINTS;
-drop table equipo CASCADE CONSTRAINTS;
-drop table partido CASCADE CONSTRAINTS;
-drop table jornada CASCADE CONSTRAINTS;
--- Estructura de tabla para la tabla login
---
+-- Estructura de tabla para la tabla Login
 
-CREATE TABLE login (
-  id_login NUMBER(3) GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MAXVALUE 999),
-  usuario VARCHAR2(8) NOT NULL,
+DROP TABLE Login CASCADE CONSTRAINTS;
+
+CREATE TABLE Login (
+  ID_Login NUMBER(3) GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MAXVALUE 999),
+  Usuario VARCHAR2(8) NOT NULL,
   pass VARCHAR2(8) NOT NULL,
   tipo CHAR NOT NULL,
-  CONSTRAINT log_id_pk PRIMARY KEY(id_login),
-  CONSTRAINT log_tip_ck CHECK (tipo IN('A','a','U','u'))
-);
+  CONSTRAINT log_id_pk PRIMARY KEY(id_Login),
+  CONSTRAINT log_tip_ck CHECK (tipo IN('A','a','U','u')));
 
--- --------------------------------------------------------
+-- Estructura de tabla para la tabla Administrador
 
---
--- Estructura de tabla para la tabla administrador
---
+DROP TABLE Administrador CASCADE CONSTRAINTS;
 
-CREATE TABLE administrador (
-  id_admin NUMBER(3) GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MAXVALUE 999),
+CREATE TABLE Administrador (
+  ID_Admin NUMBER(3),
   nombre VARCHAR2(20) NOT NULL,
   apellido VARCHAR2(20) NOT NULL,
   pass NUMBER(4) NOT NULL,
-  CONSTRAINT adm_id_pk PRIMARY KEY(id_admin)
-);
+  CONSTRAINT ADM_ID_PK PRIMARY KEY(ID_Admin),
+  CONSTRAINT ADM_ID_FK FOREIGN KEY(ID_Admin) REFERENCES Login (ID_Login));
 
--- --------------------------------------------------------
+-- Estructura de tabla para la tabla Usuario
 
---
--- Estructura de tabla para la tabla usuario
---
+DROP TABLE Usuario CASCADE CONSTRAINTS;
 
-CREATE TABLE usuario (
-  id_usuario NUMBER(3) GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MAXVALUE 999),
+CREATE TABLE Usuario (
+  ID_Usuario NUMBER(3),
   nombre VARCHAR2(20) NOT NULL,
   apellido VARCHAR2(20) NOT NULL,
-  CONSTRAINT usr_id_pk PRIMARY KEY(id_usuario)
-);
+  CONSTRAINT USU_ID_PK PRIMARY KEY (ID_Usuario)
+  CONSTRAINT USU_ID_FK FOREIGN KEY (ID_Usuario) REFERENCES Login (ID_Login));
 
--- --------------------------------------------------------
+-- Estructura de tabla para la tabla Jugador
 
---
--- Estructura de tabla para la tabla jugador
---
+DROP TABLE Jugador CASCADE CONSTRAINTS;
 
-CREATE TABLE jugador (
-  id_persona NUMBER(4) NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MAXVALUE 999),
+CREATE TABLE Jugador (
+  ID_Jugador NUMBER(3),
   nombre VARCHAR2(20) NOT NULL,
   nickname VARCHAR2(20) NOT NULL,
   sueldo double(6,2) NOT NULL,
   telefono VARCHAR2(9) NOT NULL,
   rol VARCHAR2(20) NOT NULL,
-  CONSTRAINT lug_id_pk PRIMARY KEY(id_persona)
-);
+  CONSTRAINT lug_id_pk PRIMARY KEY(id_persona));
 
--- --------------------------------------------------------
+-- Estructura de tabla para la tabla Equipo
 
---
--- Estructura de tabla para la tabla equipo
---
+DROP TABLE Equipo CASCADE CONSTRAINTS;
 
-CREATE TABLE equipo (
-  id_equipo NUMBER(4) NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MAXVALUE 999),
+CREATE TABLE Equipo (
+  ID_Equipo NUMBER(2) NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MAXVALUE 999),
   nombre VARCHAR2(20) NOT NULL,
   nacionalidad VARCHAR2(20) NOT NULL,
   anio_creacion NUMBER(4) NOT NULL,
-  CONSTRAINT equ_id_pk PRIMARY KEY(id_equipo)
-) ;
+  CONSTRAINT equ_id_pk PRIMARY KEY(ID_Equipo));
 
--- --------------------------------------------------------
+-- Estructura de tabla para la tabla Partido
 
---
--- Estructura de tabla para la tabla partido
---
+DROP TABLE Partido CASCADE CONSTRAINTS;
 
-CREATE TABLE partido (
-  id_partido NUMBER(4) NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MAXVALUE 999),
+CREATE TABLE Partido (
+  ID_Partido NUMBER(2) NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MAXVALUE 999),
   hora time NOT NULL,
   puntosLocal NUMBER(3) NOT NULL,
   puntosVisitante NUMBER(3) NOT NULL,
-  id_equipo_local NUMBER(4) NOT NULL,
-  id_equipo_visitante NUMBER(4) NOT NULL,
-  id_jornada NUMBER(4) NOT NULL,
-  CONSTRAINT par_id_pk PRIMARY KEY(id_partido)
-);
+  ID_Equipo_local NUMBER(4) NOT NULL,
+  ID_Equipo_visitante NUMBER(4) NOT NULL,
+  ID_Jornada NUMBER(4) NOT NULL,
+  CONSTRAINT PAR_ID_PK PRIMARY KEY (ID_Partido),
+  CONSTRAINT PAR_JOR_FK FOREIGN KEY (ID_Jornada) REFERENCES Jornada (ID_Jornada) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT PAR_LOC_FK FOREIGN KEY (ID_Local) REFERENCES Equipo (ID_Equipo) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT PAR_VIS_FK FOREIGN KEY (ID_Visitante) REFERENCES Equipo (ID_Equipo) ON DELETE CASCADE ON UPDATE CASCADE;)
 
--- --------------------------------------------------------
+-- Estructura de tabla para la tabla Jornada
 
---
--- Estructura de tabla para la tabla jornada
---
+DROP TABLE Jornada CASCADE CONSTRAINTS;
 
-CREATE TABLE jornada (
-  id_jornada NUMBER(2) NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MAXVALUE 999),
+CREATE TABLE Jornada (
+  ID_Jornada NUMBER(2) NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MAXVALUE 999),
   fechaInicio date NOT NULL,
   fechaFin date NOT NULL,
   numeroJornada NUMBER(3) NOT NULL,
-  numeroTemporada NUMBER(3) NOT NULL
-);
+  numeroTemporada NUMBER(3) NOT NULL);
 
 -- --------------------------------------------------------
 
 --
--- GENERANDO INDICES PK Y FK PARA LAS TABLAS VOLCADAS
+-- Indices de la tabla Administrador
 --
 
--- --------------------------------------------------------
-
---
--- Indices de la tabla login
---
-
-ALTER TABLE login
-  ADD PRIMARY KEY LO_CDLO_PK (codLogin);
-
--- --------------------------------------------------------
-
---
--- Indices de la tabla administrador
---
-
-ALTER TABLE administrador
+ALTER TABLE Administrador
   ADD PRIMARY KEY AD_CDAD_PK (codAdministrador),
   ADD KEY AD_ADCL_FK (codLogin);
 
 -- --------------------------------------------------------
 
 --
--- Indices de la tabla usuario
+-- Indices de la tabla Usuario
 --
 
-ALTER TABLE usuario
+ALTER TABLE Usuario
   ADD PRIMARY KEY US_CDUS_PK (codUsuario),
   ADD KEY US_USCL_FK (codLogin);
 
@@ -153,29 +118,29 @@ ALTER TABLE duenio
 -- --------------------------------------------------------
   
 --
--- Indices de la tabla jugador
+-- Indices de la tabla Jugador
 --
 
-ALTER TABLE jugador
+ALTER TABLE Jugador
   ADD PRIMARY KEY JU_CDJU_PK (codJugador),
   ADD KEY JU_JUEQ_FK (codEquipo);
 
 -- --------------------------------------------------------  
   
 --
--- Indices de la tabla equipo
+-- Indices de la tabla Equipo
 --
-ALTER TABLE equipo
+ALTER TABLE Equipo
   ADD PRIMARY KEY EQ_CDEQ_PK (codEquipo),
   ADD KEY EQ_EQDU_FK (codDuenio);
 
 -- --------------------------------------------------------
 
 --
--- Indices de la tabla partido
+-- Indices de la tabla Partido
 --
 
-ALTER TABLE partido
+ALTER TABLE Partido
   ADD PRIMARY KEY PA_CDPA_PK (codPartido),
   ADD KEY PA_PEQL_FK (codLocal),
   ADD KEY PA_PEQV_FK (codVisitante),
@@ -184,10 +149,10 @@ ALTER TABLE partido
 -- --------------------------------------------------------
 
 --
--- Indices de la tabla jornada
+-- Indices de la tabla Jornada
 --
 
-ALTER TABLE jornada
+ALTER TABLE Jornada
   ADD PRIMARY KEY JO_CDJO_PK (codJornada);
 
 -- --------------------------------------------------------
@@ -199,28 +164,28 @@ ALTER TABLE jornada
 -- --------------------------------------------------------
 
 --
--- AUTO_INCREMENT de la tabla login
+-- AUTO_INCREMENT de la tabla Login
 --
 
-ALTER TABLE login
+ALTER TABLE Login
   MODIFY codLogin NUMBER(4) NOT NULL AUTO_INCREMENT;
 
 -- -------------------------------------------------------- 
 
 --
--- AUTO_INCREMENT de la tabla administrador
+-- AUTO_INCREMENT de la tabla Administrador
 --
 
-ALTER TABLE administrador
+ALTER TABLE Administrador
   MODIFY codAdministrador NUMBER(4) NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
   
 --
--- AUTO_INCREMENT de la tabla usuario
+-- AUTO_INCREMENT de la tabla Usuario
 --
 
-ALTER TABLE usuario
+ALTER TABLE Usuario
   MODIFY codUsuario NUMBER(4) NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
@@ -235,37 +200,37 @@ ALTER TABLE duenio
 -- --------------------------------------------------------
 
 --
--- AUTO_INCREMENT de la tabla jugador
+-- AUTO_INCREMENT de la tabla Jugador
 --
 
-ALTER TABLE jugador
+ALTER TABLE Jugador
   MODIFY codJugador NUMBER(4) NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
 
 --
--- AUTO_INCREMENT de la tabla equipo
+-- AUTO_INCREMENT de la tabla Equipo
 --
 
-ALTER TABLE equipo
+ALTER TABLE Equipo
   MODIFY codEquipo NUMBER(4) NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
 
 --
--- AUTO_INCREMENT de la tabla partido
+-- AUTO_INCREMENT de la tabla Partido
 --
 
-ALTER TABLE partido
+ALTER TABLE Partido
   MODIFY codPartido NUMBER(4) NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
 
 --
--- AUTO_INCREMENT de la tabla jornada
+-- AUTO_INCREMENT de la tabla Jornada
 --
 
-ALTER TABLE jornada
+ALTER TABLE Jornada
   MODIFY codJornada NUMBER(11) NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
@@ -276,26 +241,26 @@ ALTER TABLE jornada
 
 -- --------------------------------------------------------
 
-ALTER TABLE login 
+ALTER TABLE Login 
   ADD CONSTRAINT LO_LOTI_CK CHECK (tipo IN('A','a','U','u','D','d'));
 
 -- --------------------------------------------------------
 
 --
--- Filtros para la tabla administrador
+-- Filtros para la tabla Administrador
 --
 
-ALTER TABLE administrador
-  ADD CONSTRAINT AD_ADCL_FK FOREIGN KEY (codLogin) REFERENCES login (codLogin) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE Administrador
+  ADD CONSTRAINT AD_ADCL_FK FOREIGN KEY (codLogin) REFERENCES Login (codLogin) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- --------------------------------------------------------
 
 --
--- Filtros para la tabla usuario
+-- Filtros para la tabla Usuario
 --
 
-ALTER TABLE usuario
-  ADD CONSTRAINT US_USCL_FK FOREIGN KEY (codLogin) REFERENCES login (codLogin) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE Usuario
+  ADD CONSTRAINT US_USCL_FK FOREIGN KEY (codLogin) REFERENCES Login (codLogin) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- --------------------------------------------------------
   
@@ -304,38 +269,38 @@ ALTER TABLE usuario
 --
 
 ALTER TABLE duenio
-  ADD CONSTRAINT DU_DUCL_FK FOREIGN KEY (codLogin) REFERENCES login (codLogin) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT DU_DUCL_FK FOREIGN KEY (codLogin) REFERENCES Login (codLogin) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- --------------------------------------------------------
 
 --
--- Filtros para la tabla jugador
+-- Filtros para la tabla Jugador
 --
 
-ALTER TABLE jugador ADD (
-  CONSTRAINT JU_JUEQ_FK FOREIGN KEY (codEquipo) REFERENCES equipo (codEquipo) ON DELETE CASCADE ON UPDATE CASCADE
+ALTER TABLE Jugador ADD (
+  CONSTRAINT JU_JUEQ_FK FOREIGN KEY (codEquipo) REFERENCES Equipo (codEquipo) ON DELETE CASCADE ON UPDATE CASCADE
   CONSTRAINT JU_SUMN_CK CHECK (salario >= 735,90));
   
 
 -- --------------------------------------------------------
 
 --
--- Filtros para la tabla equipo
+-- Filtros para la tabla Equipo
 --
 
-ALTER TABLE equipo
+ALTER TABLE Equipo
   ADD CONSTRAINT EQ_EQDU_FK FOREIGN KEY (codDuenio) REFERENCES duenio (codDuenio) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- --------------------------------------------------------
 
 --
--- Filtros para la tabla partido
+-- Filtros para la tabla Partido
 --
 
-ALTER TABLE partido
-  ADD CONSTRAINT PA_PAJO_FK FOREIGN KEY (codJornada) REFERENCES jornada (codJornada) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT PA_PEQL_FK FOREIGN KEY (codLocal) REFERENCES equipo (codEquipo) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT PA_PEQV_FK FOREIGN KEY (codVisitante) REFERENCES equipo (codEquipo) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE Partido
+  ADD CONSTRAINT PA_PAJO_FK FOREIGN KEY (codJornada) REFERENCES Jornada (codJornada) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT PA_PEQL_FK FOREIGN KEY (codLocal) REFERENCES Equipo (codEquipo) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT PA_PEQV_FK FOREIGN KEY (codVisitante) REFERENCES Equipo (codEquipo) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- INSERCCION PREVIA DE DATOS PARA LAS TABLAS ANTERIORMENTE VOLCADAS - ESTOS DATOS SON OBLIGATORIOS
@@ -345,29 +310,29 @@ ALTER TABLE partido
 -- --------------------------------------------------------
 
 --
--- Datos para la tabla 'login' y 'administracion' -  Creacion del usuario SUPERAMINISTRADOR
+-- Datos para la tabla 'Login' y 'administracion' -  Creacion del Usuario SUPERAMINISTRADOR
 --
 
-INSERT INTO login (codLogin, usuario, passwd, tipo) VALUES (1, 'root','root','A');
+INSERT INTO Login (codLogin, Usuario, passwd, tipo) VALUES (1, 'root','root','A');
 
-INSERT INTO administrador VALUES (1, '00000000A', 'Miguel', 'Olmo', 1);
+INSERT INTO Administrador VALUES (1, '00000000A', 'Miguel', 'Olmo', 1);
 
 -- --------------------------------------------------------
 
 --
--- Datos para la tabla 'login' y 'duenio' -  Creacion de un duenio SUPERDUENIO
+-- Datos para la tabla 'Login' y 'duenio' -  Creacion de un duenio SUPERDUENIO
 --
 
-INSERT INTO login (codLogin, usuario, passwd, tipo) VALUES (2, 'super','duenio','D');
+INSERT INTO Login (codLogin, Usuario, passwd, tipo) VALUES (2, 'super','duenio','D');
 
 INSERT INTO duenio VALUES (1, '11111111A', 'Super', 'Duenio', 2);
 
 -- --------------------------------------------------------
 
 --
--- Datos para la tabla 'login' y 'usuario' -  Creacion de un usuario SUPERUSUARIO
+-- Datos para la tabla 'Login' y 'Usuario' -  Creacion de un Usuario SUPERUsuario
 --
 
-INSERT INTO login (codLogin, usuario, passwd, tipo) VALUES (3, 'super','usuario','U');
+INSERT INTO Login (codLogin, Usuario, passwd, tipo) VALUES (3, 'super','Usuario','U');
 
-INSERT INTO usuario VALUES (1, '22222222A', 'Super', 'Usuario', 3);
+INSERT INTO Usuario VALUES (1, '22222222A', 'Super', 'Usuario', 3);
