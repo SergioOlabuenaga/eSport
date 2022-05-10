@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="clasificaciones" type="tipoclasificaciones"/>
+  <xs:complexType name="tipoclasificaciones">
+    <xs:sequence>
+      <xs:element type="tipoclasificacion" name="clasificacion"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoclasificacion">
+    <xs:sequence>
+      <xs:element type="tipoequipos" name="equipos"/>
+      <xs:element type="xs:string" name="temporada"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="ID"/>
+  </xs:complexType>
+  <xs:complexType name="tipoequipos">
+    <xs:sequence>
+      <xs:element type="tipoequipo" name="equipo" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoequipo">
+    <xs:sequence>
+      <xs:element type="tiponombre" name="nombre"/>
+      <xs:element type="tipopuntos" name="puntos"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="tipopuntos">
+    <xs:restriction base="xs:int">
+      <xs:pattern value="[0-9]"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="tiponombre">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="ID"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

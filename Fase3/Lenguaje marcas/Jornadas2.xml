@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Jornadas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Jornadas2.xsd">
+    <jornada ID="1">
+        <fecha>13/05/2022</fecha>
+    </jornada>
+    <jornada ID="2">
+        <fecha>20/05/2022</fecha>
+    </jornada>
+    <jornada ID="3">
+        <fecha>27/05/2022</fecha>
+    </jornada>
+    <jornada ID="4">
+        <fecha>03/06/2022</fecha>
+    </jornada>
+    <jornada ID="5">
+        <fecha>10/06/2022</fecha>
+    </jornada>
+</Jornadas>
