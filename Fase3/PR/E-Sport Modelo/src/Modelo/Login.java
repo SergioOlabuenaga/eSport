@@ -9,18 +9,16 @@ public class Login {
 
     private Usuario usuario;
     private Administrador admin;
-    private ArrayList<Equipo> listaEquipos;
 
     public Login() {
     }
 
-    public Login(String usuario, String pass, char tipo, Modelo.Usuario usuario1, Administrador admin, ArrayList<Equipo> listaEquipos) {
+    public Login(String usuario, String pass, char tipo, Modelo.Usuario usuario1, Administrador admin) {
         Usuario = usuario;
         this.pass = pass;
         this.tipo = tipo;
         this.usuario = usuario1;
         this.admin = admin;
-        this.listaEquipos = listaEquipos;
     }
 
     public String getUsuario() {
@@ -39,13 +37,6 @@ public class Login {
         this.admin = admin;
     }
 
-    public ArrayList<Equipo> getListaEquipos() {
-        return listaEquipos;
-    }
-
-    public void setListaEquipos(ArrayList<Equipo> listaEquipos) {
-        this.listaEquipos = listaEquipos;
-    }
 
     public void setUsuario(String usuario) {
         Usuario = usuario;

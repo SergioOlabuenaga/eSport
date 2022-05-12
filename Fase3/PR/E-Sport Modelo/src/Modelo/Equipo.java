@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Equipo {
     private String nombreE;
-    private int año_creacion;
+    private int añoCreacion;
     private String nacionalidad;
 
     private ArrayList<Jugador> listaJugadores;
@@ -19,7 +19,7 @@ public class Equipo {
     public Equipo(String nombreE, int año_creacion, String nacionalidad, ArrayList<Jugador> listaJugadores,
                   Entrenador entrenadorE, Dueño dueñoE, Asistente asistenteE) {
         this.nombreE = nombreE;
-        this.año_creacion = año_creacion;
+        this.añoCreacion = año_creacion;
         this.nacionalidad = nacionalidad;
         this.listaJugadores = listaJugadores;
         this.entrenadorE = entrenadorE;
@@ -35,12 +35,12 @@ public class Equipo {
         this.nombreE = nombreE;
     }
 
-    public int getAño_creacion() {
-        return año_creacion;
+    public int getAñoCreacion() {
+        return añoCreacion;
     }
 
-    public void setAño_creacion(int año_creacion) {
-        this.año_creacion = año_creacion;
+    public void setAñoCreacion(int añoCreacion) {
+        this.añoCreacion = añoCreacion;
     }
 
     public String getNacionalidad() {
@@ -92,7 +92,7 @@ public class Equipo {
     public String toString() {
         return "Datos del equipo: \n" +
                 "Nombre Equipo: " + nombreE + '\n' +
-                "Año_creacion: " + año_creacion + '\n' +
+                "Año_creacion: " + añoCreacion + '\n' +
                 "Nacionalidad: " + nacionalidad + '\n' +
                 "Lista Jugadores: " + listaJugadores  + '\n'+
                 "Entrenador Equipo: " + entrenadorE  + '\n'+
