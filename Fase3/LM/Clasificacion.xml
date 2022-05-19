@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE clasificaciones SYSTEM "Clasificacion.dtd">
-<clasificaciones>
-    <clasificacion ID="1">
-        <equipos>
-            <equipo>
-                <nombre ID="1">equipo1</nombre>
-                <puntos>6</puntos>
-            </equipo>
-            <equipo>
-                <nombre ID="2">equipo2</nombre>
-                <puntos>6</puntos>
-            </equipo>
-            <equipo>
-                <nombre ID="3">equipo3</nombre>
-                <puntos>0</puntos>
-            </equipo>
-            <equipo>
-                <nombre ID="4">equipo4</nombre>
-                <puntos>0</puntos>
-            </equipo>
-        </equipos>
-        <temporada>temporada1</temporada>
-    </clasificacion>
-</clasificaciones>
+<!DOCTYPE clasificacion SYSTEM "Clasificacion.dtd">
+<clasificacion ID="1">
+    <equipos>
+        <equipo>
+            <nombre ID="1">equipo1</nombre>
+            <puntos>9</puntos>
+            <posicion>1</posicion>
+        </equipo>
+        <equipo>
+            <nombre ID="2">equipo2</nombre>
+            <puntos>6</puntos>
+            <posicion>2</posicion>
+        </equipo>
+        <equipo>
+            <nombre ID="3">equipo3</nombre>
+            <puntos>3</puntos>
+            <posicion>3</posicion>
+        </equipo>
+        <equipo>
+            <nombre ID="4">equipo4</nombre>
+            <puntos>0</puntos>
+            <posicion>4</posicion>
+        </equipo>
+    </equipos>
+    <fechaExpiracion>17/06/2022</fechaExpiracion>
+</clasificacion>

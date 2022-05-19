@@ -1,6 +1,16 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 
 <!DOCTYPE ultimajornada SYSTEM "UltimaJornada.dtd">
-<ultimajornada ID="5">
-    <fecha>10/06/2022</fecha>
+<ultimajornada ID="3" fecha="10/06/2022">
+    <partido ID="1">
+        <equipo ID="1">equipo1</equipo>
+        <equipo ID="4">equipo4</equipo>
+        <resultado>3-1</resultado>
+    </partido>
+    <partido ID="2">
+        <equipo ID="2">equipo2</equipo>
+        <equipo ID="3">equipo3</equipo>
+        <resultado>3-2</resultado>
+    </partido>
+    <fechaExpiracion>17/06/2022</fechaExpiracion>
 </ultimajornada>

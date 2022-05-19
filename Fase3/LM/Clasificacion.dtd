@@ -1,11 +1,9 @@
-<!ELEMENT clasificaciones (clasificacion)*>
-        <!ELEMENT clasificacion (equipos|temporada)*>
-        <!ATTLIST clasificacion
-                ID CDATA #REQUIRED>
+<!ELEMENT clasificacion (equipos+,fechaExpiracion)>
+        <!ATTLIST clasificacion ID CDATA #REQUIRED>
+        <!ELEMENT fechaExpiracion (#PCDATA)>
         <!ELEMENT equipos (equipo)*>
-        <!ELEMENT equipo (nombre|puntos)*>
+        <!ELEMENT equipo (nombre|puntos|posicion)*>
         <!ELEMENT nombre (#PCDATA)>
-        <!ATTLIST nombre
-                ID CDATA #REQUIRED>
+        <!ATTLIST nombre ID CDATA #REQUIRED>
         <!ELEMENT puntos (#PCDATA)>
-        <!ELEMENT temporada (#PCDATA)>
+        <!ELEMENT posicion (#PCDATA)>

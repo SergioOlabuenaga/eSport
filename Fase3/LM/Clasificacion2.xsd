@@ -1,17 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="clasificaciones" type="tipoclasificaciones"/>
-  <xs:complexType name="tipoclasificaciones">
-    <xs:sequence>
-      <xs:element type="tipoclasificacion" name="clasificacion"/>
-    </xs:sequence>
-  </xs:complexType>
+  <xs:element name="clasificacion" type="tipoclasificacion"/>
   <xs:complexType name="tipoclasificacion">
     <xs:sequence>
       <xs:element type="tipoequipos" name="equipos"/>
-      <xs:element type="xs:string" name="temporada"/>
     </xs:sequence>
-    <xs:attribute type="xs:string" name="ID"/>
+    <xs:attribute type="xs:ID" name="ID"/>
+    <xs:attribute type="xs:date" name="fechaExpiracion"/>
   </xs:complexType>
   <xs:complexType name="tipoequipos">
     <xs:sequence>
@@ -21,18 +16,14 @@
   <xs:complexType name="tipoequipo">
     <xs:sequence>
       <xs:element type="tiponombre" name="nombre"/>
-      <xs:element type="tipopuntos" name="puntos"/>
+      <xs:element type="xs:integer" name="puntos"/>
+      <xs:element type="xs:integer" name="posicion"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:simpleType name="tipopuntos">
-    <xs:restriction base="xs:int">
-      <xs:pattern value="[0-9]"/>
-    </xs:restriction>
-  </xs:simpleType>
   <xs:complexType name="tiponombre">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute type="xs:string" name="ID"/>
+        <xs:attribute type="xs:ID" name="ID"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
