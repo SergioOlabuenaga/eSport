@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE Jornadas SYSTEM "Jornadas.dtd">
 <Jornadas>
-    <jornada ID="1">
-        <fecha>13/05/2022</fecha>
+    <jornada ID="1" fecha="27/05/2022">
+        <partido ID="1" hora="17:30">
+            <equipo ID="1">equipo1</equipo>
+            <equipo ID="2">equipo2</equipo>
+            <resultado>3-2</resultado>
+        </partido>
+        <partido ID="2" hora="20:00">
+            <equipo ID="3">equipo3</equipo>
+            <equipo ID="4">equipo4</equipo>
+            <resultado>3-2</resultado>
+        </partido>
     </jornada>
-    <jornada ID="2">
-        <fecha>20/05/2022</fecha>
+    <jornada ID="2" fecha="03/06/2022">
+        <partido ID="1" hora="13:00">
+            <equipo ID="1">equipo1</equipo>
+            <equipo ID="3">equipo3</equipo>
+            <resultado>3-0</resultado>
+        </partido>
+        <partido ID="2" hora="18:30">
+            <equipo ID="2">equipo2</equipo>
+            <equipo ID="4">equipo4</equipo>
+            <resultado>3-1</resultado>
+        </partido>
     </jornada>
-    <jornada ID="3">
-        <fecha>27/05/2022</fecha>
+    <jornada ID="3" fecha="10/06/2022">
+        <partido ID="1" hora="15:00">
+            <equipo ID="1">equipo1</equipo>
+            <equipo ID="4">equipo4</equipo>
+            <resultado>3-1</resultado>
+        </partido>
+        <partido ID="2" hora="19:00">
+            <equipo ID="2">equipo2</equipo>
+            <equipo ID="3">equipo3</equipo>
+            <resultado>3-2</resultado>
+        </partido>
     </jornada>
-    <jornada ID="4">
-        <fecha>03/06/2022</fecha>
-    </jornada>
-    <jornada ID="5">
-        <fecha>10/06/2022</fecha>
-    </jornada>
+    <fechaExpiracion>17/06/2022</fechaExpiracion>
 </Jornadas>

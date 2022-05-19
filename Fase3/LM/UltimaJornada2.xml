@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ultimajornada xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="5" xsi:noNamespaceSchemaLocation="UltimaJornada2.xsd">
-    <fecha>10/06/2022</fecha>
+<ultimajornada ID="J3" fecha="2022-06-10" fechaExpiracion="2022-06-17" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="UltimaJornada2.xsd">
+    <partido ID="P1">
+        <equipo ID="E1">equipo1</equipo>
+        <equipo ID="E4">equipo4</equipo>
+        <resultado>3-1</resultado>
+    </partido>
+    <partido ID="P2">
+        <equipo ID="E2">equipo2</equipo>
+        <equipo ID="E3">equipo3</equipo>
+        <resultado>3-2</resultado>
+    </partido>
 </ultimajornada>
+
