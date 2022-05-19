@@ -1,0 +1,9 @@
+<!ELEMENT ultimajornada (partido+,fechaExpiracion)>
+        <!ELEMENT fechaExpiracion (#PCDATA)>
+        <!ATTLIST ultimajornada ID CDATA #REQUIRED>
+        <!ATTLIST ultimajornada fecha CDATA #REQUIRED>
+        <!ELEMENT partido (equipo+,resultado)>
+        <!ATTLIST partido ID CDATA #REQUIRED>
+        <!ELEMENT equipo (#PCDATA)>
+        <!ATTLIST equipo ID CDATA #REQUIRED>
+        <!ELEMENT resultado (#PCDATA)>

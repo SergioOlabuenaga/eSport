@@ -1,0 +1,11 @@
+<!ELEMENT Jornadas (jornada+,fechaExpiracion)>
+        <!ELEMENT fechaExpiracion (#PCDATA)>
+        <!ELEMENT jornada (partido)+>
+        <!ATTLIST jornada ID CDATA #REQUIRED>
+        <!ATTLIST jornada fecha CDATA #REQUIRED>
+        <!ELEMENT partido (equipo+, resultado)>
+        <!ATTLIST partido ID CDATA #REQUIRED>
+        <!ATTLIST partido hora CDATA #REQUIRED>
+        <!ELEMENT equipo (#PCDATA)>
+        <!ATTLIST equipo ID CDATA #REQUIRED>
+        <!ELEMENT resultado (#PCDATA)>

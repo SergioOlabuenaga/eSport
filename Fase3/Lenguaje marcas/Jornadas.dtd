@@ -1,5 +1,0 @@
-<!ELEMENT Jornadas (jornada)*>
-        <!ELEMENT jornada (fecha)*>
-        <!ATTLIST jornada
-                ID CDATA #REQUIRED>
-        <!ELEMENT fecha (#PCDATA)>

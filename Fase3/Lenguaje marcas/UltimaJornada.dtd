@@ -1,4 +1,0 @@
-<!ELEMENT ultimajornada (fecha)*>
-        <!ATTLIST ultimajornada
-                ID CDATA #REQUIRED>
-        <!ELEMENT fecha (#PCDATA)>

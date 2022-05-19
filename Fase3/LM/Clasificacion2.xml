@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clasificacion ID="C1" fechaExpiracion="2022-06-17" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Clasificacion2.xsd">
+        <equipos>
+            <equipo>
+                <nombre ID="E1">equipo1</nombre>
+                <puntos>9</puntos>
+                <posicion>1</posicion>
+            </equipo>
+            <equipo>
+                <nombre ID="E2">equipo2</nombre>
+                <puntos>6</puntos>
+                <posicion>2</posicion>
+            </equipo>
+            <equipo>
+                <nombre ID="E3">equipo3</nombre>
+                <puntos>3</puntos>
+                <posicion>3</posicion>
+            </equipo>
+            <equipo>
+                <nombre ID="E4">equipo4</nombre>
+                <puntos>0</puntos>
+                <posicion>4</posicion>
+            </equipo>
+        </equipos>
+</clasificacion>

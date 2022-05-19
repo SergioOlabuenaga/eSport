@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Jornadas fechaExpiracion="2022-06-17" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Jornadas2.xsd">
+    <jornada ID="J1" fecha="2022-05-27">
+        <partido ID="P1" hora="17:00:00">
+            <equipo ID="E1">equipo1</equipo>
+            <equipo ID="E2">equipo2</equipo>
+            <resultado>3-2</resultado>
+        </partido>
+        <partido ID="P2" hora="20:00:00">
+            <equipo ID="E3">equipo3</equipo>
+            <equipo ID="E4">equipo4</equipo>
+            <resultado>3-2</resultado>
+        </partido>
+    </jornada>
+    <jornada ID="J2" fecha="2022-06-03">
+        <partido ID="P3" hora="13:00:00">
+            <equipo ID="E1">equipo1</equipo>
+            <equipo ID="E3">equipo3</equipo>
+            <resultado>3-0</resultado>
+        </partido>
+        <partido ID="P4" hora="18:00:00">
+            <equipo ID="E2">equipo2</equipo>
+            <equipo ID="E4">equipo4</equipo>
+            <resultado>3-1</resultado>
+        </partido>
+    </jornada>
+    <jornada ID="J3" fecha="2022-06-10">
+        <partido ID="P5" hora="15:00:00">
+            <equipo ID="E1">equipo1</equipo>
+            <equipo ID="E4">equipo4</equipo>
+            <resultado>3-1</resultado>
+        </partido>
+        <partido ID="P6" hora="19:00:00">
+            <equipo ID="E2">equipo2</equipo>
+            <equipo ID="E3">equipo3</equipo>
+            <resultado>3-2</resultado>
+        </partido>
+    </jornada>
+</Jornadas>
