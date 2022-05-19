@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Clasificacion {
     private int temporada;
+    
 
     private ArrayList<Equipo> listaEquipos;
 
