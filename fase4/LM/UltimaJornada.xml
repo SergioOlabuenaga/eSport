@@ -1,0 +1,17 @@
+<?xml version='1.0'  encoding='Cp1252' ?>
+<RESULTS>
+	<ROW>
+		<COLUMN NAME="RESULTADO_XML"><![CDATA[<?xml version="1.0"?>
+<Jornadas xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
+ <UltimaJornada>
+  <ID_JORNADA>1</ID_JORNADA>
+  <FECHA>27/05/22</FECHA>
+ </UltimaJornada>
+ <UltimaJornada>
+  <ID_JORNADA>2</ID_JORNADA>
+  <FECHA>27/05/22</FECHA>
+ </UltimaJornada>
+</Jornadas>
+]]></COLUMN>
+	</ROW>
+</RESULTS>

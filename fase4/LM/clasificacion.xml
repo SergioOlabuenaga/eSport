@@ -1,0 +1,21 @@
+<?xml version='1.0'  encoding='Cp1252' ?>
+<RESULTS>
+	<ROW>
+		<COLUMN NAME="RESULTADO_XML"><![CDATA[<?xml version="1.0"?>
+<Clasificación xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
+ <Equipo>
+  <ID_CLASIFICACION>1</ID_CLASIFICACION>
+  <ID_EQUIPO>1</ID_EQUIPO>
+  <PUNTOS>10</PUNTOS>
+  <TEMPORADA>1</TEMPORADA>
+ </Equipo>
+ <Equipo>
+  <ID_CLASIFICACION>2</ID_CLASIFICACION>
+  <ID_EQUIPO>2</ID_EQUIPO>
+  <PUNTOS>15</PUNTOS>
+  <TEMPORADA>1</TEMPORADA>
+ </Equipo>
+</Clasificación>
+]]></COLUMN>
+	</ROW>
+</RESULTS>

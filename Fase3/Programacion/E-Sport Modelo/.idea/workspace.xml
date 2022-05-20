@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0be4d009-cfd4-4f43-9f81-1d54dc3499a4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/Clasificacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Clasificacion.java" afterDir="false" />
-    </list>
+    <list default="true" id="0be4d009-cfd4-4f43-9f81-1d54dc3499a4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,7 +88,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/p1e5JPA (1)" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Proyecto_eSports" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -121,6 +115,7 @@
       <workItem from="1652422968563" duration="2798000" />
       <workItem from="1652768923080" duration="319000" />
       <workItem from="1652941421759" duration="1824000" />
+      <workItem from="1653027659006" duration="66000" />
     </task>
     <servers />
   </component>
