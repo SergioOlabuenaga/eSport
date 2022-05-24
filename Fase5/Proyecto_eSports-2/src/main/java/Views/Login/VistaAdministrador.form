@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Views.Login.VistaAdministrador">
+  <grid id="27dc6" binding="jAdministrador" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="10" left="20" bottom="10" right="20"/>
+    <constraints>
+      <xy x="20" y="20" width="721" height="400"/>
+    </constraints>
+    <properties>
+      <background color="-1"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="d03ba" class="javax.swing.JLabel" binding="lTitulo">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="26" style="1"/>
+          <text value="LaLiga Genuine"/>
+        </properties>
+      </component>
+      <grid id="b14a9" binding="jPrincipal" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="6908e" class="javax.swing.JMenuBar" binding="jmbMenu" layout-manager="GridLayoutManager" row-count="1" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-13591617"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <grid id="4bde8" class="javax.swing.JMenu" binding="jmClasificacion" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Clasificación"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="6c6ab" class="javax.swing.JMenuItem" binding="jmiVerClasificacion">
+                    <constraints/>
+                    <properties>
+                      <text value="Ver"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="30017" class="javax.swing.JMenu" binding="jmDueño" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints>
+                  <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Dueño"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="b30a1" class="javax.swing.JMenuItem" binding="jmiCrearDueño">
+                    <constraints/>
+                    <properties>
+                      <text value="Crear"/>
+                    </properties>
+                  </component>
+                  <component id="cca02" class="javax.swing.JMenuItem" binding="jmiModificarDueño">
+                    <constraints/>
+                    <properties>
+                      <text value="Modificar"/>
+                    </properties>
+                  </component>
+                  <component id="8cba8" class="javax.swing.JMenuItem" binding="jmiEliminarDueño">
+                    <constraints/>
+                    <properties>
+                      <text value="Eliminar"/>
+                    </properties>
+                  </component>
+                  <component id="2e059" class="javax.swing.JMenuItem" binding="jmiVerDueño">
+                    <constraints/>
+                    <properties>
+                      <text value="Ver"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="66ab2" class="javax.swing.JMenu" binding="jmUsuario" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints>
+                  <grid row="0" column="7" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Usuario"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="45d96" class="javax.swing.JMenuItem" binding="jmiCrearUsuario">
+                    <constraints/>
+                    <properties>
+                      <text value="Crear"/>
+                    </properties>
+                  </component>
+                  <component id="149b6" class="javax.swing.JMenuItem" binding="jmiModificarUsuario">
+                    <constraints/>
+                    <properties>
+                      <text value="Modificar"/>
+                    </properties>
+                  </component>
+                  <component id="5c157" class="javax.swing.JMenuItem" binding="jmiEliminarUsuario">
+                    <constraints/>
+                    <properties>
+                      <text value="Eliminar"/>
+                    </properties>
+                  </component>
+                  <component id="c5d07" class="javax.swing.JMenuItem" binding="jmiVerUsuario">
+                    <constraints/>
+                    <properties>
+                      <text value="Ver"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="c2654" class="javax.swing.JMenu" binding="jmCuenta" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints>
+                  <grid row="0" column="8" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Cuenta"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="d286" class="javax.swing.JMenuItem" binding="jmiCerrarSesion">
+                    <constraints/>
+                    <properties>
+                      <text value="Cerrar sesión"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="38d9b" class="javax.swing.JMenu" binding="jmJornadas" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Jornadas"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="9779d" class="javax.swing.JMenuItem" binding="jmiGenerarJornada">
+                    <constraints/>
+                    <properties>
+                      <text value="Generar"/>
+                    </properties>
+                  </component>
+                  <component id="83f38" class="javax.swing.JMenuItem" binding="jmiActualizarJornada">
+                    <constraints/>
+                    <properties>
+                      <text value="Actualizar"/>
+                    </properties>
+                  </component>
+                  <component id="ee49" class="javax.swing.JMenuItem" binding="jmiVerJornada">
+                    <constraints/>
+                    <properties>
+                      <text value="Ver"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="6b9c9" class="javax.swing.JMenu" binding="jmEquipo" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Equipo"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="ab135" class="javax.swing.JMenuItem" binding="jmiCrearEquipo">
+                    <constraints/>
+                    <properties>
+                      <text value="Crear"/>
+                    </properties>
+                  </component>
+                  <component id="f1309" class="javax.swing.JMenuItem" binding="jmiModificarEquipo">
+                    <constraints/>
+                    <properties>
+                      <text value="Modificar"/>
+                    </properties>
+                  </component>
+                  <component id="cb2ae" class="javax.swing.JMenuItem" binding="jmiEliminarEquipo">
+                    <constraints/>
+                    <properties>
+                      <text value="Eliminar"/>
+                    </properties>
+                  </component>
+                  <component id="b361d" class="javax.swing.JMenuItem" binding="jmiVerEquipo">
+                    <constraints/>
+                    <properties>
+                      <text value="Ver"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="16cc" class="javax.swing.JMenu" binding="jmJugador" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints>
+                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Jugador"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="4951c" class="javax.swing.JMenuItem" binding="jmiCrearJugador">
+                    <constraints/>
+                    <properties>
+                      <text value="Crear"/>
+                    </properties>
+                  </component>
+                  <component id="bf98b" class="javax.swing.JMenuItem" binding="jmiModificarJugador">
+                    <constraints/>
+                    <properties>
+                      <text value="Modificar"/>
+                    </properties>
+                  </component>
+                  <component id="68041" class="javax.swing.JMenuItem" binding="jmiEliminarJugador">
+                    <constraints/>
+                    <properties>
+                      <text value="Eliminar"/>
+                    </properties>
+                  </component>
+                  <component id="d720" class="javax.swing.JMenuItem" binding="jmiVerJugador">
+                    <constraints/>
+                    <properties>
+                      <text value="Ver"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="20b70" class="javax.swing.JMenu" binding="jmAsistente" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints>
+                  <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Asistente"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="95029" class="javax.swing.JMenuItem" binding="jmiCrearAsistente">
+                    <constraints/>
+                    <properties>
+                      <text value="Crear"/>
+                    </properties>
+                  </component>
+                  <component id="2a008" class="javax.swing.JMenuItem" binding="jmiModificarAsistente">
+                    <constraints/>
+                    <properties>
+                      <text value="Modificar"/>
+                    </properties>
+                  </component>
+                  <component id="d51ef" class="javax.swing.JMenuItem" binding="jmiEliminarAsistente">
+                    <constraints/>
+                    <properties>
+                      <text value="Eliminar"/>
+                    </properties>
+                  </component>
+                  <component id="e85bd" class="javax.swing.JMenuItem" binding="jmiVerAsistente">
+                    <constraints/>
+                    <properties>
+                      <text value="Ver"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="6547" class="javax.swing.JMenu" binding="jmEntrenador" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints>
+                  <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Entrenador"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="67d1" class="javax.swing.JMenuItem" binding="jmiCrearEntrenador">
+                    <constraints/>
+                    <properties>
+                      <text value="Crear"/>
+                    </properties>
+                  </component>
+                  <component id="80378" class="javax.swing.JMenuItem" binding="jmiModificarEntrenador">
+                    <constraints/>
+                    <properties>
+                      <text value="Modificar"/>
+                    </properties>
+                  </component>
+                  <component id="5cd8c" class="javax.swing.JMenuItem" binding="jmiEliminarEntrenador">
+                    <constraints/>
+                    <properties>
+                      <text value="Eliminar"/>
+                    </properties>
+                  </component>
+                  <component id="5b252" class="javax.swing.JMenuItem" binding="jmiVerEntrenador">
+                    <constraints/>
+                    <properties>
+                      <text value="Ver"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+            </children>
+          </grid>
+          <grid id="5830c" binding="jFoto" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="20" left="0" bottom="20" right="0"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+              <foreground color="-1"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="c950e" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <icon value="logoliga.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <component id="f4688" class="javax.swing.JLabel" binding="jlBienvenida">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+  <persistence-unit name="default">
+
+    <class>Modelo.Asistente</class>
+    <class>Modelo.Clasificacion</class>
+    <class>Modelo.Dueno</class>
+    <class>Modelo.Entrenador</class>
+    <class>Modelo.Equipo</class>
+    <class>Modelo.Jornada</class>
+    <class>Modelo.Jugador</class>
+    <class>Modelo.Login</class>
+    <class>Modelo.Partido</class>
+
+    <properties>
+      <property name="hibernate.connection.url" value="jdbc:oracle:thin:@SrvOracle:1521:orcl"/>
+      <property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver"/>
+      <property name="hibernate.connection.username" value="eqdaw04"/>
+      <property name="hibernate.connection.password" value="eqdaw04"/>
+    </properties>
+  </persistence-unit>
+</persistence>
